@@ -13,12 +13,12 @@ const BAR_GAP = 50;
 const COLOR_PLAYER = `rgba(255, 0, 0, 1)`;
 const TEXT_HEADLINE = [`Ура, вы победили!`, `Список результатов:`];
 
-let renderCloud = function (ctx, x, y, color) {
+const renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-let getMaxElement = function (arr) {
+const getMaxElement = function (arr) {
   let maxElement = arr[0];
 
   for (let i = 1; i < arr.length; i++) {
@@ -30,14 +30,14 @@ let getMaxElement = function (arr) {
   return maxElement;
 };
 
-let renderHeadline = function (ctx, headline, x, y, color) {
+const renderHeadline = function (ctx, headline, x, y, color) {
   ctx.font = `16px PT Mono`;
   ctx.textBaseline = `hanging`;
   ctx.fillStyle = color;
   ctx.fillText(headline, x, y);
 };
 
-let renderTransparancy = (max) => {
+const renderTransparancy = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
